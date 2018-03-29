@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Aspronto"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="Aspronto.MainPage">
+    <StackLayout HorizontalOptions="Center">
+    <Label x:Name="dateLabel"
+           Text="Date!" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+    <Entry x:Name="dateEntry"
+           Placeholder="DD/MM/YY" />
+
+    <Label Text="How was the rate of pain today?"/>
+    <Slider x:Name="painSlider"
+            Minimum="0"
+            Maximum="100"
+            ValueChanged="painSlider_ValueChanged" />
+    <Label x:Name="painResult" FontSize="10" />
+
+    <Label Text="Peak flow meter"/>
+    <controls:CheckBox DefaultText="Safe 100-350"
+                       x:Name="safePeak"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewrite"/>
+    <controls:CheckBox DefaultText="Prevent 300-350"
+                       x:Name="preventPeak"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewrite"/>
+    <controls:CheckBox DefaultText="Treatment/Attention 350-500"
+                       x:Name="attentionPeak"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewrite"/>
+
+    <Label Text="How was your mood today?"/>
+    <Picker x:Name="moodPicker"/>
+
+    <Label Text="Symptoms?"/>
+    <Switch HorizontalOptions="Center" Toggled="onTogged"/>
+    <Label x:Name="symptomResult" HorizontalOptions="Center" FontSize="10"/>
+    <Label x:Name="symptomEntry" Text="If yes please identify what was that?"/>
+    <controls:CheckBox DefaultText="Chest Tightness"
+                       x:Name="ct"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+    <controls:CheckBox DefaultText="coughing"
+                       x:Name="cough"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+    <controls:CheckBox DefaultText="nasal congestion"
+                       x:Name="nc"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+    <controls:CheckBox DefaultText="phlegam production"
+                       x:Name="pp"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+    <controls:CheckBox DefaultText="shortness of breath"
+                       x:Name="sb"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+    <controls:CheckBox DefaultText="shortness of breath on excretion"
+                       x:Name="sbe"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+    <controls:CheckBox DefaultText="Wheezing"
+                       x:Name="wheez"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewriter"/>
+
+
+    <Label Text="How would you rate your diet today? very poor to excellent"/>
+    <Slider x:Name="dietSlider"
+            Minimum="0"
+            Maximum="100"
+            ValueChanged="dietSlider_ValueChanged"/>
+    <Label x:Name="dietResult" HorizontalOptions="Center" FontSize="10"/>
+
+    <Label Text="Changes in physical avtivity?"/>
+    <Switch HorizontalOptions="Center" Toggled="onTogged"/>
+    <Label x:Name="changeResult" HorizontalOptions="Center" FontSize="10"/>
+
+    <Label Text="Activity Intensity"/>
+    <controls:CheckBox DefaultText="Light"
+                       x:Name="lightIntensity"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="Moderate"/>
+    <controls:CheckBox DefaultText="Prevent 300-350"
+                       x:Name="moderateIntensity"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewrite"/>
+    <controls:CheckBox DefaultText="Intense"
+                       x:Name="intenseIntensity"
+                       HorizontalOptions="FillAndExpand"
+                       FontSize="18"
+                       FontName="AmericanTypewrite"/>
+
+    <Label Text="Please leave additional comments"/>
+    <Entry x:Name="additionalComment"/>
+
+    <Button Text="Submit" x:Name="Button_Clicked"/>
+
+
+
+    </StackLayout>
+
+
+
+
+</ContentPage>
