@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Aspronto.ProfilePage">
+    <ContentPage.Content>
+
+        
+        <StackLayout HorizontalOptions="Center" Margin="20, 20" MinimumWidthRequest="1000">
+        <Grid>
+             <Label Grid.Row="0" Grid.Column="0" Text="Name" HorizontalOptions="Start"></Label>
+                
+            <Entry Grid.Row="1" x:Name="userName" Placeholder="Name"></Entry>
+
+            <Label Grid.Row="2" HorizontalOptions="Start" Text="Date of Birth"></Label>
+
+            <DatePicker Grid.Row="3" x:Name="dobPicker"></DatePicker>
+
+            <Label Grid.Row="4" HorizontalOptions="Start" Text="Gender"></Label>
+            <Picker Grid.Row="5" x:Name="GenderPicker"></Picker>
+
+            <Label Grid.Row="6" HorizontalOptions="Start" Text="Living Area"></Label>
+            <Picker Grid.Row="7" x:Name="SuburbPicker"></Picker>
+
+            <Button Grid.Row="8" Text="Submit" Clicked="Add_Clicked" BackgroundColor="Blue"></Button>   
+         </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

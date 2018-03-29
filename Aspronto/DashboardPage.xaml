@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="Aspronto.DashboardPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Start" Margin="20">
+            <!--<Label x:Name="currentLocation" HorizontalOptions="Center"/>-->
+<!--            Widget shall go in here.-->
+            <WebView x:Name="webView" WidthRequest="1000" HeightRequest="250"></WebView>
+            <Grid HeightRequest="300" HorizontalOptions="CenterAndExpand">
+                <!--since Open Weather Map API is quite unstable. for Later iterations, might change to another one.
+                so here we use hard coded data to display the result.-->
+               <Label Grid.Row="0" Grid.Column="0" x:Name="Index" Text="Air Pollutant" HorizontalOptions="Start"/>
+               <Label Grid.Row="0" Grid.Column="1" x:Name="IndexNumber" Text="Index" HorizontalOptions="End"/>
+                
+               <Label Grid.Row="1" Grid.Column="0" x:Name="CO" Text="CO" HorizontalOptions="Start"/>
+               <Label Grid.Row="1" Grid.Column="1" x:Name="CO_Index" Text="85" HorizontalOptions="End"/>
+                
+               <Label Grid.Row="2" Grid.Column="0" x:Name="NO2" Text="NO2" HorizontalOptions="Start"/>
+               <Label Grid.Row="2" Grid.Column="1" x:Name="NO2_Index" Text="65" HorizontalOptions="End"/>
+                
+               <Label Grid.Row="3" Grid.Column="0" x:Name="SO2" Text="SO2" HorizontalOptions="Start"/>
+               <Label Grid.Row="3" Grid.Column="1" x:Name="SO2_Index" Text="55" HorizontalOptions="End"/>
+                
+                <Label Grid.Row="4" Grid.Column="0" x:Name="O3" Text="NO2" HorizontalOptions="Start"/>
+               <Label Grid.Row="4" Grid.Column="1" x:Name="O3_Index" Text="95" HorizontalOptions="End"/>
+
+            </Grid>
+            <ProgressBar></ProgressBar>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

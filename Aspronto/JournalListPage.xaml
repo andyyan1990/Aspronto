@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Aspronto.JournalListPage" Title="Journal">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Name="Add" Clicked="Handle_Clicked" Icon=""></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <ListView>
+            
+        </ListView>
+        
+       <!-- <ListView x:Name="journals">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding JournalDate}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+    </ContentPage.Content>
+</ContentPage>

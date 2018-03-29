@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Aspronto.AddJournalPage">
+
+    <ContentPage.Content>
+
+
+    <StackLayout HorizontalOptions="Center" Margin="20, 20">
+            
+    <Label x:Name="dateLabel"
+           Text="Date"/>
+    <DatePicker x:Name="JournalDate" DateSelected="Handle_DateSelected"></DatePicker>
+
+            
+    <Label Text="How was the rate of pain today?"/>
+    <Slider x:Name="painSlider"
+            Minimum="0"
+            Maximum="100" ValueChanged="Handle_ValueChanged" />
+            <Grid>
+                <Label Grid.Row="0" Grid.Column="0" Text="Bad" HorizontalOptions="Start"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="Good" HorizontalOptions="End"/>
+            </Grid>
+
+                
+    
+
+    <Label Text="How was your mood today?"/>
+    <Picker x:Name="moodPicker" SelectedIndexChanged="Handle_SelectedIndexChanged"/>
+
+    <Label Text="Symptoms?"/>
+    <Label x:Name="symptomResult" HorizontalOptions="Center" FontSize="10"/>
+    <Label x:Name="symptomEntry" Text="If yes please identify what was that?"/>
+    <Picker x:Name="SympPicker" SelectedIndexChanged="Handle_SelectedIndexChanged_1"></Picker>
+
+
+    <Label Text="How would you rate your diet today?"/>
+    <Slider x:Name="dietSlider"
+            Minimum="0"
+            Maximum="100"
+            />
+    <Grid>
+        <Label Grid.Row="0" Grid.Column="0" Text="Poor" HorizontalOptions="Start"/>
+        <Label Grid.Row="0" Grid.Column="1" Text="Excellent" HorizontalOptions="End"/>
+    </Grid>
+
+    <!--<Label Text="Changes in physical avtivity?"/>
+    <Switch HorizontalOptions="Center" Toggled="onTogged"/>
+    <Label x:Name="changeResult" HorizontalOptions="Center" FontSize="10"/>-->
+
+    <Label Text="Activity Intensity"/>
+    <Picker x:Name="IntensityPicker"></Picker>
+
+    <Label Text="Please leave additional comments"/>
+    <Entry x:Name="additionalComment"/>
+
+    <Button Text="Submit" Clicked="Button_Clicked"/>
+
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

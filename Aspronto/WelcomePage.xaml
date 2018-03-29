@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Aspronto"
+    x:Class="Aspronto.WelcomePage">
+    <ContentPage.Content>
+<StackLayout VerticalOptions="Center">
+        <Image Source="/Users/andyyan/Documents/2018-S1/FIT5120 IE Project/Iteration One/Aspronto/Aspronto/App_logo.jpg" HorizontalOptions="Center"/>
+
+        <StackLayout  HorizontalOptions="Center">
+            <Label Text="Your Asthma Pal" HorizontalOptions="Center"/>
+            <Label Text="Welcome" FontSize="Large" HorizontalOptions="Center" />
+            <Label Text="----------------------------------------" HorizontalOptions="Center"/>
+            <Button Text="Lets get STARTED! ->" FontSize="Medium" HorizontalOptions="Center"
+                    Clicked="Handle_Clicked"/>
+        </StackLayout>
+
+    </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
