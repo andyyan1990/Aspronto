@@ -56,29 +56,33 @@ namespace Aspronto
             }
             else
             {
-                Profile newProfile = new Profile()
-                {
-                    Name = userName.Text,
-                    DateOfBirth = dobPicker.Date,
-                    Gender = GenderPicker.SelectedItem.ToString(),
-                    Suburb = SuburbPicker.SelectedItem.ToString()
+                try{
+                    Profile newProfile = new Profile()
+                    {
+                        Name = userName.Text,
+                        DateOfBirth = dobPicker.Date,
+                        Gender = GenderPicker.SelectedItem.ToString(),
+                        Suburb = SuburbPicker.SelectedItem.ToString()
 
-                };
+                    };
 
-                SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
-                conn.CreateTable<Profile>();
-                int indicator = conn.Insert(newProfile);
-                conn.Close();
+                    SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
+                    conn.CreateTable<Profile>();
+                    int indicator = conn.Insert(newProfile);
+                    conn.Close();
 
-                if (indicator > 0)
-                {
-                    DisplayAlert("Success", "Profile Added.", "Okay");
+                    if (indicator > 0)
+                    {
+                        DisplayAlert("Success", "Profile Added.", "Okay");
+                    }
+                    else
+                    {
+                        DisplayAlert("Failure", "Profile not Added.", "Okay");
+                    }
+                }catch(NullReferenceException ex){
+                    DisplayAlert("Inomplete", "Please fill in your information.", "Okay");
+                    Console.WriteLine(ex.Message);
                 }
-                else
-                {
-                    DisplayAlert("Failure", "Profile not Added.", "Okay");
-                }
-
             }
         }
     }
