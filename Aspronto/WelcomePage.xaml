@@ -6,7 +6,7 @@
     x:Class="Aspronto.WelcomePage">
     <ContentPage.Content>
 <StackLayout VerticalOptions="Center">
-        <Image Source="/Users/andyyan/Documents/2018-S1/FIT5120 IE Project/Iteration One/Aspronto/Aspronto/App_logo.jpg" HorizontalOptions="Center"/>
+        <Image Source="App_logo.jpg" HorizontalOptions="Center"/>
 
         <StackLayout  HorizontalOptions="Center">
             <Label Text="Your Asthma Pal" HorizontalOptions="Center"/>

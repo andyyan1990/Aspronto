@@ -18,11 +18,11 @@ namespace Aspronto
 		protected override void OnAppearing()
 		{
             base.OnAppearing();
-            //SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
-            //conn.CreateTable<Journal>();
-            //var Journals = conn.Table<Journal>().ToList();
-            //journals.ItemsSource = Journals;
-            //conn.Close();
+            SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
+            conn.CreateTable<Journal>();
+            var Journals = conn.Table<Journal>().ToList();
+            journals.ItemsSource = Journals;
+            conn.Close();
 
 
 		}
@@ -32,7 +32,7 @@ namespace Aspronto
             //throw new NotImplementedException();
             //Button button = (Button)sender;
             AddJournalPage newJournalPage = new AddJournalPage();
-            Navigation.PushAsync(newJournalPage);
+            Navigation.PushModalAsync(newJournalPage);
         }
     }
 }

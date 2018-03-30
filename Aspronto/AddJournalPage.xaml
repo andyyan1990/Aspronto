@@ -6,7 +6,7 @@
     <ContentPage.Content>
 
 
-    <StackLayout HorizontalOptions="Center" Margin="20, 20">
+    <StackLayout HorizontalOptions="Center" Margin="20, 50">
             
     <Label x:Name="dateLabel"
            Text="Date"/>
@@ -55,6 +55,7 @@
     <Entry x:Name="additionalComment"/>
 
     <Button Text="Submit" Clicked="Button_Clicked"/>
+    <Button Text="Cancel" Clicked="Cancel_Button_Clicked"/>
 
 
     </StackLayout>

@@ -63,39 +63,77 @@ namespace Aspronto
         void Button_Clicked(object sender, EventArgs e)
         {
             //Save data to local DB
+            try{
+                if (String.IsNullOrEmpty(painSlider.Value.ToString())
+               || String.IsNullOrEmpty(moodPicker.SelectedItem.ToString())
+               || String.IsNullOrEmpty(SympPicker.SelectedItem.ToString())
+               || String.IsNullOrEmpty(dietSlider.Value.ToString())
+               || String.IsNullOrEmpty(IntensityPicker.SelectedItem.ToString()))
+                {
 
-            DateTime journalDate = JournalDate.Date;
-            String painIndex = painSlider.Value.ToString();
-            String moodState = moodPicker.SelectedItem.ToString();
-            String sympResult = SympPicker.SelectedItem.ToString();
-            String dietIndex = dietSlider.Value.ToString();
-            String intensityLevel = IntensityPicker.SelectedItem.ToString();
-            String additionaCom = additionalComment.Text;
+                    DisplayAlert("Incompele", "Please Fill in all fields", "Okay");
 
-            Journal newJournal = new Journal()
-            {
-                JournalDate = journalDate,
-                PainIndex = painIndex,
-                MoodState = moodState,
-                SympResult = sympResult,
-                DietIndex = dietIndex,
-                IntensityLevel = intensityLevel,
-                AdditionComment = additionaCom
-            };
+                }
+                else
+                {
 
-            SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
-            conn.CreateTable<Journal>();
-            int indicator = conn.Insert(newJournal);
-            conn.Close();
+                    DateTime journalDate = JournalDate.Date;
+                    string painIndex = painSlider.Value.ToString();
+                    string moodState = moodPicker.SelectedItem.ToString();
+                    string sympResult = SympPicker.SelectedItem.ToString();
+                    string dietIndex = dietSlider.Value.ToString();
+                    string intensityLevel = IntensityPicker.SelectedItem.ToString();
+                    string additionaCom = String.Empty;
 
-            if (indicator > 0)
-            {
-                DisplayAlert("Success", "Journal Added.", "Okay");
+                    if (String.IsNullOrEmpty(additionalComment.Text)
+                       || String.IsNullOrWhiteSpace(additionalComment.Text))
+                    {
+
+                    }
+                    else
+                    {
+                        additionaCom = additionalComment.Text;
+                    }
+
+                    Journal newJournal = new Journal()
+                    {
+                        JournalDate = journalDate,
+                        PainIndex = painIndex,
+                        MoodState = moodState,
+                        SympResult = sympResult,
+                        DietIndex = dietIndex,
+                        IntensityLevel = intensityLevel,
+                        AdditionComment = additionaCom
+                    };
+
+                    SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
+                    conn.CreateTable<Journal>();
+                    int indicator = conn.Insert(newJournal);
+                    conn.Close();
+
+                    if (indicator > 0)
+                    {
+                        DisplayAlert("Success", "Journal Added.", "Okay");
+                        Navigation.PopModalAsync();
+                    }
+                    else
+                    {
+                        DisplayAlert("Failure", "Journal not Added.", "Okay");
+                    }
+
+
+                }
+            }catch(NullReferenceException ex){
+                DisplayAlert("Incompele", "Please Fill in all fields", "Okay");
+                Console.WriteLine(ex.Message);
+                
             }
-            else
-            {
-                DisplayAlert("Failure", "Journal not Added.", "Okay");
-            }
+
+        }
+
+        void Cancel_Button_Clicked(object sender, EventArgs e)
+        { 
+            Navigation.PopModalAsync();
         }
     }
 }

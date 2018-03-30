@@ -8,16 +8,14 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
-        <ListView>
-            
-        </ListView>
-        
-       <!-- <ListView x:Name="journals">
+       <ListView x:Name="journals">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding JournalDate}"/>
+                    <TextCell Text="{Binding JournalDate, StringFormat='{0:MM/dd/yyyy}'} "/>
+                   
+<!--                    <TextCell Text="{Binding JournalDate}" />-->
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>-->
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
