@@ -1,7 +1,7 @@
 # Aspronto
 IE Project
 
-This is a cross-platform mobile app project.
+This is a cross-platform mobile app project. Current Focus is on iOS application. Feel free to download the project file and run it with Visual Studio (with Zamarin) to run the app. Thanks.
 Development IDE is Xamarin.
 Used Language is C#.
 
